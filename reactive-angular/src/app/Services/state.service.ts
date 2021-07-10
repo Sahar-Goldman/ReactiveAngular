@@ -6,20 +6,16 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class StateService {
-  private a: number = 0;
-  private b: number = 0;
-  private a$ = new BehaviorSubject<number>(this.a);
-  private b$ = new BehaviorSubject<number>(this.b);
+  private a$ = new BehaviorSubject<number>(0);
+  private b$ = new BehaviorSubject<number>(0);
 
   constructor() { }
 
   setA(num : number){
-    this.a = num;
     this.a$.next(num);
   }
 
   setB(num : number){
-    this.b = num;
     this.b$.next(num);
   }
 
