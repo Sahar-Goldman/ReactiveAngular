@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+    <h1>Calculator</h1>
+    <label>a:</label>
+    <input #a type="number" 
+        (input)="setA(a.valueAsNumber)" 
+        [class.invalid]="!(isAValid$ | async)"
+    >
+
+    <label>b:</label>
+    <input #b type="number"
+        (input)="setB(b.valueAsNumber)"
+        [class.invalid]="!(isBValid$ | async)"
+    >
+
+</html>
